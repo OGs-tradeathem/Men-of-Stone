@@ -690,7 +690,10 @@ blockquote {
   background: #050504;
   border: 1px solid rgba(231, 221, 208, 0.18);
   box-shadow: var(--shadow);
+  display: grid;
+  gap: 14px;
   overflow: hidden;
+  padding: 14px;
   position: relative;
 }
 
@@ -710,6 +713,22 @@ blockquote {
   display: block;
   height: auto;
   width: 100%;
+}
+
+.video-label {
+  color: var(--cream);
+  font-family: "Barlow Condensed", Arial, sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.video-label.secondary {
+  color: var(--stone-2);
+  font-size: 18px;
+  margin-top: 14px;
 }
 
 .contact-section {
