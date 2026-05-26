@@ -725,12 +725,6 @@ blockquote {
   text-transform: uppercase;
 }
 
-.video-label.secondary {
-  color: var(--stone-2);
-  font-size: 18px;
-  margin-top: 14px;
-}
-
 .contact-section {
   background:
     linear-gradient(90deg, rgba(5, 5, 4, 0.94), rgba(5, 5, 4, 0.78)),
