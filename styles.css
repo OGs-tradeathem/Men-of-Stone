@@ -336,7 +336,8 @@ h1 {
 .hero-line::before,
 .section-heading h2::after,
 .phil-copy h2::after,
-.principles-header h2::after {
+.principles-header h2::after,
+.music-copy h2::after {
   background: linear-gradient(90deg, var(--red), var(--cream), var(--blue), var(--green));
   content: "";
   display: block;
@@ -414,6 +415,7 @@ h1 {
 .section-heading h2,
 .phil-copy h2,
 .principles-header h2,
+.music-copy h2,
 .contact-copy h2 {
   font-size: clamp(46px, 5vw, 76px);
 }
@@ -649,6 +651,67 @@ blockquote {
   object-position: 55% 25%;
 }
 
+.music-section {
+  align-items: center;
+  background:
+    radial-gradient(circle at 14% 20%, rgba(185, 39, 31, 0.13), transparent 22rem),
+    radial-gradient(circle at 84% 28%, rgba(31, 125, 193, 0.15), transparent 24rem),
+    linear-gradient(135deg, #080807 0%, #171511 58%, #071015 100%);
+  display: grid;
+  gap: 5vw;
+  grid-template-columns: minmax(300px, 0.72fr) minmax(360px, 1fr);
+  padding: 86px 5vw;
+}
+
+.music-copy {
+  max-width: 620px;
+}
+
+.music-copy p {
+  color: rgba(231, 221, 208, 0.84);
+  font-size: 20px;
+  margin: 18px 0 0;
+}
+
+.music-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.donation-note {
+  color: var(--stone-2) !important;
+  font-size: 16px !important;
+  max-width: 480px;
+}
+
+.music-video {
+  background: #050504;
+  border: 1px solid rgba(231, 221, 208, 0.18);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  position: relative;
+}
+
+.music-video::after {
+  background: linear-gradient(90deg, var(--red), var(--cream), var(--blue), var(--green));
+  bottom: 0;
+  content: "";
+  height: 5px;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+}
+
+.music-video video {
+  aspect-ratio: 16 / 9;
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
 .contact-section {
   background:
     linear-gradient(90deg, rgba(5, 5, 4, 0.94), rgba(5, 5, 4, 0.78)),
@@ -792,6 +855,7 @@ textarea:focus {
 
   .meet-strip,
   .phil-section,
+  .music-section,
   .contact-section {
     grid-template-columns: 1fr;
   }
@@ -897,6 +961,7 @@ textarea:focus {
   .meet-strip,
   .phil-section,
   .principles,
+  .music-section,
   .contact-section {
     padding: 48px 22px;
   }
