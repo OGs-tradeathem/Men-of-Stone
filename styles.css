@@ -709,9 +709,13 @@ blockquote {
 }
 
 .music-video video {
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 17 / 30;
   display: block;
   height: auto;
+  margin: 0 auto;
+  max-height: 82vh;
+  max-width: 544px;
+  object-fit: contain;
   width: 100%;
 }
 
