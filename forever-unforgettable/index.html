@@ -54,23 +54,21 @@
       }
 
       .song-page {
-        display: grid;
-        gap: 48px;
-        grid-template-columns: minmax(280px, 0.82fr) minmax(260px, 544px);
+        margin: 0 auto;
+        max-width: 1240px;
         min-height: 100vh;
-        padding: 56px 5vw;
+        padding: 46px 5vw 64px;
       }
 
       .song-copy {
-        align-self: center;
-        max-width: 720px;
+        max-width: none;
       }
 
       .mark {
-        height: 82px;
+        height: 132px;
         margin-bottom: 28px;
         object-fit: cover;
-        width: 82px;
+        width: 132px;
       }
 
       .eyebrow,
@@ -87,9 +85,10 @@
       h1 {
         color: var(--stone);
         font-family: "Archivo Black", Impact, sans-serif;
-        font-size: clamp(52px, 8vw, 104px);
-        line-height: 0.92;
+        font-size: clamp(48px, 7.2vw, 94px);
+        line-height: 0.94;
         margin: 0;
+        max-width: 980px;
         text-transform: uppercase;
       }
 
@@ -107,15 +106,23 @@
         font-size: 21px;
         font-weight: 600;
         margin: 0;
-        max-width: 640px;
+        max-width: 900px;
+      }
+
+      .release-grid {
+        align-items: start;
+        display: grid;
+        gap: 32px;
+        grid-template-columns: minmax(0, 0.9fr) minmax(320px, 500px);
+        margin-top: 34px;
+        max-width: 1120px;
       }
 
       .donation-box {
         background: rgba(5, 5, 4, 0.68);
         border: 1px solid var(--line);
         box-shadow: var(--shadow);
-        margin-top: 32px;
-        max-width: 660px;
+        max-width: none;
         padding: 26px;
       }
 
@@ -167,6 +174,24 @@
         margin-top: 18px !important;
       }
 
+      .social-copy {
+        border-top: 1px solid rgba(231, 221, 208, 0.14);
+        color: rgba(231, 221, 208, 0.84) !important;
+        font-size: 17px !important;
+        margin-top: 22px !important;
+        padding-top: 18px;
+      }
+
+      .hashtags {
+        color: var(--cream) !important;
+        font-family: "Barlow Condensed", Arial, sans-serif;
+        font-size: 22px !important;
+        font-weight: 800;
+        line-height: 1.15;
+        margin-top: 16px !important;
+        text-transform: uppercase;
+      }
+
       .release-note {
         border-left: 4px solid var(--blue);
         color: var(--stone-2);
@@ -177,7 +202,6 @@
       }
 
       .video-wrap {
-        align-self: center;
         background: #050504;
         border: 1px solid var(--line);
         box-shadow: var(--shadow);
@@ -198,7 +222,8 @@
         aspect-ratio: 17 / 30;
         background: #000;
         display: block;
-        max-height: 82vh;
+        max-height: 78vh;
+        object-fit: contain;
         width: 100%;
       }
 
@@ -206,6 +231,10 @@
         .song-page {
           grid-template-columns: 1fr;
           padding: 38px 22px;
+        }
+
+        .release-grid {
+          grid-template-columns: 1fr;
         }
 
         .video-wrap {
@@ -217,6 +246,11 @@
         .lead {
           font-size: 18px;
         }
+
+        .mark {
+          height: 96px;
+          width: 96px;
+        }
       }
     </style>
   </head>
@@ -227,45 +261,58 @@
         <p class="eyebrow">WoBBoB</p>
         <h1 id="song-title">Forever Unforgettable</h1>
         <p class="lead">
-          A song and tribute for Phil Stone. This page is here for the track now;
-          more details on Men of Stone will be shared over the next few days.
+          A song and tribute to Phil Stone, one of the kindest men I have ever
+          known. This page is here for the track now; more details on Men of
+          Stone will be shared over the next few days.
         </p>
 
-        <div class="donation-box">
-          <p class="note-title">Download the track</p>
-          <p>
-            The track is free to download. We are asking everyone who can to
-            donate to Phil's fundraiser too, whether it is a penny or a pound.
-          </p>
-          <div class="actions">
-            <a
-              class="button primary"
-              href="/api/download-track"
-            >Download Forever Unforgettable</a>
-            <a
-              class="button ghost"
-              href="/api/donate"
-              target="_blank"
-              rel="noopener"
-            >Donate to Phil's fundraiser</a>
+        <div class="release-grid">
+          <div>
+            <div class="donation-box">
+              <p class="note-title">Download the track</p>
+              <p>
+                This track is free. If you like it and you want to keep it,
+                please donate to Phil's fundraiser if you can, whether it is a
+                penny or a pound.
+              </p>
+              <div class="actions">
+                <a
+                  class="button primary"
+                  href="/api/download-track"
+                >Download Forever Unforgettable</a>
+                <a
+                  class="button ghost"
+                  href="/api/donate"
+                  target="_blank"
+                  rel="noopener"
+                >Donate to Phil's fundraiser</a>
+              </div>
+              <p class="social-copy">
+                Please like and share the song post on social media as well. It
+                helps more people hear Phil's tribute and keeps his name moving.
+              </p>
+              <p class="hashtags">
+                #ForeverPhil #ForeverUnforgettable #PhilStone
+              </p>
+              <p class="small-note">
+                Download clicks and fundraiser clicks are timestamped so we can
+                compare interest in the track with support for the fundraiser.
+              </p>
+            </div>
+
+            <p class="release-note">
+              This is a standalone song page. The wider Men of Stone site is
+              being prepared and more will be released soon.
+            </p>
           </div>
-          <p class="small-note">
-            Download clicks and fundraiser clicks are timestamped so we can
-            compare interest in the track with support for the fundraiser.
-          </p>
+
+          <section class="video-wrap" aria-label="Forever Unforgettable tribute video">
+            <p class="video-label">Tribute video</p>
+            <video controls preload="metadata" poster="../assets/photos/phil-hills.jpeg">
+              <source src="https://github.com/OGs-tradeathem/Men-of-Stone/releases/download/baptised-boyo-video-exact/wobbob-baptised-boyo-exact.mp4" type="video/mp4">
+            </video>
+          </section>
         </div>
-
-        <p class="release-note">
-          This is a standalone song page. The wider Men of Stone site is being
-          prepared and more will be released soon.
-        </p>
-      </section>
-
-      <section class="video-wrap" aria-label="Forever Unforgettable tribute video">
-        <p class="video-label">Tribute video</p>
-        <video controls preload="metadata" poster="../assets/photos/phil-hills.jpeg">
-          <source src="https://github.com/OGs-tradeathem/Men-of-Stone/releases/download/baptised-boyo-video-exact/wobbob-baptised-boyo-exact.mp4" type="video/mp4">
-        </video>
       </section>
     </main>
   </body>
