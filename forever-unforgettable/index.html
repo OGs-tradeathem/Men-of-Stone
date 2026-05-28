@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <title>WoBBoB - Forever Unforgettable | For Phil Stone</title>
+    <meta
+      name="description"
+      content="Forever Unforgettable by WoBBoB, a song and tribute for Phil Stone. Donate to Phil's fundraiser to get the track."
+    >
+    <meta property="og:title" content="WoBBoB - Forever Unforgettable">
+    <meta property="og:description" content="A song and tribute for Phil Stone. Donate to Phil's fundraiser to get the track.">
+    <meta property="og:image" content="https://www.men-of-stone.online/assets/photos/phil-hills.jpeg">
+    <link rel="icon" href="../assets/logo/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    >
+    <style>
+      :root {
+        --ink: #050504;
+        --stone: #e7ddd0;
+        --stone-2: #bdb2a4;
+        --cream: #d7c7b4;
+        --red: #b9271f;
+        --blue: #1f7dc1;
+        --green: #5f8f3b;
+        --line: rgba(231, 221, 208, 0.18);
+        --shadow: 0 28px 90px rgba(0, 0, 0, 0.5);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        background:
+          radial-gradient(circle at 16% 8%, rgba(185, 39, 31, 0.16), transparent 24rem),
+          radial-gradient(circle at 86% 0%, rgba(31, 125, 193, 0.14), transparent 26rem),
+          linear-gradient(180deg, #070706 0%, #15130f 54%, #050504 100%);
+        color: var(--stone);
+        font-family: Inter, Arial, sans-serif;
+        line-height: 1.5;
+        margin: 0;
+        min-height: 100vh;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .song-page {
+        display: grid;
+        gap: 48px;
+        grid-template-columns: minmax(280px, 0.82fr) minmax(260px, 544px);
+        min-height: 100vh;
+        padding: 56px 5vw;
+      }
+
+      .song-copy {
+        align-self: center;
+        max-width: 720px;
+      }
+
+      .mark {
+        height: 82px;
+        margin-bottom: 28px;
+        object-fit: cover;
+        width: 82px;
+      }
+
+      .eyebrow,
+      .note-title {
+        color: var(--cream);
+        font-family: "Barlow Condensed", Arial, sans-serif;
+        font-size: 24px;
+        font-weight: 800;
+        letter-spacing: 0;
+        margin: 0 0 12px;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        color: var(--stone);
+        font-family: "Archivo Black", Impact, sans-serif;
+        font-size: clamp(52px, 8vw, 104px);
+        line-height: 0.92;
+        margin: 0;
+        text-transform: uppercase;
+      }
+
+      h1::after {
+        background: linear-gradient(90deg, var(--red), var(--cream), var(--blue), var(--green));
+        content: "";
+        display: block;
+        height: 5px;
+        margin: 26px 0;
+        width: 170px;
+      }
+
+      .lead {
+        color: rgba(231, 221, 208, 0.9);
+        font-size: 21px;
+        font-weight: 600;
+        margin: 0;
+        max-width: 640px;
+      }
+
+      .donation-box {
+        background: rgba(5, 5, 4, 0.68);
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow);
+        margin-top: 32px;
+        max-width: 660px;
+        padding: 26px;
+      }
+
+      .donation-box p {
+        color: rgba(231, 221, 208, 0.86);
+        font-size: 18px;
+        margin: 0;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-top: 24px;
+      }
+
+      .button {
+        align-items: center;
+        border: 1px solid transparent;
+        display: inline-flex;
+        font-family: "Barlow Condensed", Arial, sans-serif;
+        font-size: 20px;
+        font-weight: 800;
+        justify-content: center;
+        min-height: 56px;
+        padding: 0 30px;
+        text-transform: uppercase;
+        transition: transform 180ms ease;
+      }
+
+      .button:hover {
+        transform: translateY(-2px);
+      }
+
+      .button.primary {
+        background: linear-gradient(90deg, var(--red), #c9b89d 50%, var(--blue));
+        color: var(--ink);
+      }
+
+      .small-note {
+        color: var(--stone-2) !important;
+        font-size: 15px !important;
+        margin-top: 18px !important;
+      }
+
+      .release-note {
+        border-left: 4px solid var(--blue);
+        color: var(--stone-2);
+        font-size: 17px;
+        margin-top: 28px;
+        max-width: 610px;
+        padding-left: 18px;
+      }
+
+      .video-wrap {
+        align-self: center;
+        background: #050504;
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow);
+        padding: 14px;
+      }
+
+      .video-label {
+        color: var(--cream);
+        font-family: "Barlow Condensed", Arial, sans-serif;
+        font-size: 22px;
+        font-weight: 800;
+        line-height: 1;
+        margin: 0 0 14px;
+        text-transform: uppercase;
+      }
+
+      video {
+        aspect-ratio: 17 / 30;
+        background: #000;
+        display: block;
+        max-height: 82vh;
+        width: 100%;
+      }
+
+      @media (max-width: 920px) {
+        .song-page {
+          grid-template-columns: 1fr;
+          padding: 38px 22px;
+        }
+
+        .video-wrap {
+          justify-self: center;
+          max-width: 544px;
+          width: 100%;
+        }
+
+        .lead {
+          font-size: 18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="song-page">
+      <section class="song-copy" aria-labelledby="song-title">
+        <img class="mark" src="../assets/logo/logo-icon.png" alt="">
+        <p class="eyebrow">WoBBoB</p>
+        <h1 id="song-title">Forever Unforgettable</h1>
+        <p class="lead">
+          A song and tribute for Phil Stone. This page is here for the track now;
+          more details on Men of Stone will be shared over the next few days.
+        </p>
+
+        <div class="donation-box">
+          <p class="note-title">To get the track</p>
+          <p>
+            We do not need to see what you donated, whether it is a penny or a
+            pound. To get this track, you need to donate to Phil's fundraiser.
+          </p>
+          <div class="actions">
+            <a
+              class="button primary"
+              href="https://www.gofundme.com/f/a-farewell-for-phil-stone?attribution_id=sl:31c75a13-1790-4652-a3f5-86b54fec34ea&amp;lang=en_GB&amp;ts=1779568085&amp;utm_campaign=pd_ss_icons&amp;utm_content=amp20_control&amp;utm_medium=customer&amp;utm_source=facebook"
+              target="_blank"
+              rel="noopener"
+            >Donate to Phil's fundraiser</a>
+          </div>
+          <p class="small-note">
+            All support goes through the GoFundMe farewell fund for Phil Stone.
+          </p>
+        </div>
+
+        <p class="release-note">
+          This is a standalone song page. The wider Men of Stone site is being
+          prepared and more will be released soon.
+        </p>
+      </section>
+
+      <section class="video-wrap" aria-label="Forever Unforgettable tribute video">
+        <p class="video-label">Tribute video</p>
+        <video controls preload="metadata" poster="../assets/photos/phil-hills.jpeg">
+          <source src="https://github.com/OGs-tradeathem/Men-of-Stone/releases/download/baptised-boyo-video-exact/wobbob-baptised-boyo-exact.mp4" type="video/mp4">
+        </video>
+      </section>
+    </main>
+  </body>
+</html>
