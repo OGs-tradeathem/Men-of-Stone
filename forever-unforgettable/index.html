@@ -7,10 +7,10 @@
     <title>WoBBoB - Forever Unforgettable | For Phil Stone</title>
     <meta
       name="description"
-      content="Forever Unforgettable by WoBBoB, a song and tribute for Phil Stone. Donate to Phil's fundraiser to get the track."
+      content="Forever Unforgettable by WoBBoB, a song and tribute for Phil Stone. Free download available; please donate to Phil's fundraiser if you can."
     >
     <meta property="og:title" content="WoBBoB - Forever Unforgettable">
-    <meta property="og:description" content="A song and tribute for Phil Stone. Donate to Phil's fundraiser to get the track.">
+    <meta property="og:description" content="A song and tribute for Phil Stone. Free download available; please donate to Phil's fundraiser if you can.">
     <meta property="og:image" content="https://www.men-of-stone.online/assets/photos/phil-hills.jpeg">
     <link rel="icon" href="../assets/logo/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -155,6 +155,12 @@
         color: var(--ink);
       }
 
+      .button.ghost {
+        background: rgba(231, 221, 208, 0.06);
+        border-color: rgba(231, 221, 208, 0.32);
+        color: var(--stone);
+      }
+
       .small-note {
         color: var(--stone-2) !important;
         font-size: 15px !important;
@@ -226,21 +232,26 @@
         </p>
 
         <div class="donation-box">
-          <p class="note-title">To get the track</p>
+          <p class="note-title">Download the track</p>
           <p>
-            We do not need to see what you donated, whether it is a penny or a
-            pound. To get this track, you need to donate to Phil's fundraiser.
+            The track is free to download. We are asking everyone who can to
+            donate to Phil's fundraiser too, whether it is a penny or a pound.
           </p>
           <div class="actions">
             <a
               class="button primary"
-              href="https://www.gofundme.com/f/a-farewell-for-phil-stone?attribution_id=sl:31c75a13-1790-4652-a3f5-86b54fec34ea&amp;lang=en_GB&amp;ts=1779568085&amp;utm_campaign=pd_ss_icons&amp;utm_content=amp20_control&amp;utm_medium=customer&amp;utm_source=facebook"
+              href="/api/download-track"
+            >Download Forever Unforgettable</a>
+            <a
+              class="button ghost"
+              href="/api/donate"
               target="_blank"
               rel="noopener"
             >Donate to Phil's fundraiser</a>
           </div>
           <p class="small-note">
-            All support goes through the GoFundMe farewell fund for Phil Stone.
+            Download clicks and fundraiser clicks are timestamped so we can
+            compare interest in the track with support for the fundraiser.
           </p>
         </div>
 
