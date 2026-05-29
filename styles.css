@@ -28,14 +28,31 @@ body {
     linear-gradient(180deg, #060605 0%, #12100d 46%, #050504 100%);
   color: var(--stone);
   font-family: Inter, Arial, sans-serif;
+  isolation: isolate;
   line-height: 1.5;
   margin: 0;
   min-height: 100vh;
   overflow-x: hidden;
+  position: relative;
 }
 
 body.menu-open {
   overflow: hidden;
+}
+
+body::before {
+  background: url("assets/logo/logo-full-transparent.png") center 52% / min(980px, 82vw) no-repeat fixed;
+  content: "";
+  inset: 0;
+  opacity: 0.14;
+  pointer-events: none;
+  position: fixed;
+  z-index: 0;
+}
+
+body > * {
+  position: relative;
+  z-index: 1;
 }
 
 a {
@@ -219,16 +236,6 @@ h3 {
   width: min(230px, 46vw);
 }
 
-.hero-watermark {
-  bottom: -11vw;
-  max-width: 980px;
-  opacity: 0.14;
-  pointer-events: none;
-  position: absolute;
-  right: -10vw;
-  width: 70vw;
-}
-
 .hero-content {
   align-self: center;
   max-width: 980px;
@@ -258,7 +265,7 @@ h3 {
 .phil-copy p,
 .music-copy p,
 .section-heading p,
-.milksham-copy p,
+.melksham-copy p,
 .contact-copy p {
   color: rgba(232, 222, 208, 0.86);
   font-size: 20px;
@@ -276,7 +283,7 @@ h3 {
 
 .phil-section,
 .music-section,
-.milksham-section,
+.melksham-section,
 .contact-section {
   display: grid;
   gap: 5vw;
@@ -409,7 +416,7 @@ blockquote {
   border-top-color: var(--cream);
 }
 
-.milksham-section {
+.melksham-section {
   background:
     radial-gradient(circle at 88% 12%, rgba(95, 143, 59, 0.13), transparent 28rem),
     linear-gradient(135deg, #080807 0%, #171511 64%, #050504 100%);
@@ -417,16 +424,7 @@ blockquote {
   position: relative;
 }
 
-.section-watermark {
-  bottom: -180px;
-  left: -160px;
-  opacity: 0.1;
-  pointer-events: none;
-  position: absolute;
-  width: 720px;
-}
-
-.milksham-section > div {
+.melksham-section > div {
   position: relative;
   z-index: 1;
 }
@@ -553,7 +551,7 @@ textarea:focus {
 
   .phil-section,
   .music-section,
-  .milksham-section,
+  .melksham-section,
   .contact-section {
     grid-template-columns: 1fr;
   }
@@ -587,12 +585,6 @@ textarea:focus {
     max-width: min(100%, 320px);
   }
 
-  .hero-watermark {
-    opacity: 0.11;
-    right: -42vw;
-    width: 130vw;
-  }
-
   h1 {
     font-size: clamp(44px, 14vw, 64px);
   }
@@ -601,7 +593,7 @@ textarea:focus {
   .phil-copy p,
   .music-copy p,
   .section-heading p,
-  .milksham-copy p,
+  .melksham-copy p,
   .contact-copy p {
     font-size: 18px;
   }
@@ -615,7 +607,7 @@ textarea:focus {
   .phil-section,
   .music-section,
   .nations-section,
-  .milksham-section,
+  .melksham-section,
   .meet-section,
   .contact-section {
     padding: 48px 22px;
