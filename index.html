@@ -3,225 +3,241 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="robots" content="noindex, nofollow">
-    <title>Men of Stone | Reveal Coming Soon</title>
+    <title>Men of Stone | In memory of Phil Stone</title>
     <meta
       name="description"
-      content="The full Men of Stone site is being prepared for reveal day. Forever Unforgettable by WoBBoB is available now."
+      content="Men of Stone is a Milksham Mental Health project in memory of Phil Stone. No man should carry it alone."
     >
+    <link rel="canonical" href="https://www.men-of-stone.online/">
     <meta property="og:title" content="Men of Stone">
-    <meta property="og:description" content="The full Men of Stone site is being prepared for reveal day. Forever Unforgettable by WoBBoB is available now.">
+    <meta property="og:description" content="A Milksham Mental Health project in memory of Phil Stone. Strength. Unity. Brotherhood.">
     <meta property="og:url" content="https://www.men-of-stone.online/">
     <meta property="og:image" content="https://www.men-of-stone.online/assets/logo/logo-full.png">
-    <link rel="canonical" href="https://www.men-of-stone.online/">
-    <link rel="icon" href="assets/logo/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     >
-    <style>
-      :root {
-        --ink: #050504;
-        --stone: #e7ddd0;
-        --stone-2: #bdb2a4;
-        --cream: #d7c7b4;
-        --red: #b9271f;
-        --blue: #1f7dc1;
-        --green: #5f8f3b;
-        --line: rgba(231, 221, 208, 0.2);
-        --shadow: 0 28px 90px rgba(0, 0, 0, 0.5);
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      body {
-        background:
-          linear-gradient(90deg, rgba(5, 5, 4, 0.96), rgba(5, 5, 4, 0.76)),
-          radial-gradient(circle at 16% 8%, rgba(185, 39, 31, 0.17), transparent 24rem),
-          radial-gradient(circle at 84% 2%, rgba(31, 125, 193, 0.16), transparent 26rem),
-          linear-gradient(180deg, #070706 0%, #15130f 56%, #050504 100%);
-        color: var(--stone);
-        font-family: Inter, Arial, sans-serif;
-        line-height: 1.5;
-        margin: 0;
-        min-height: 100vh;
-      }
-
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
-
-      img {
-        display: block;
-        max-width: 100%;
-      }
-
-      .holding-page {
-        display: grid;
-        min-height: 100vh;
-        padding: 42px 5vw;
-        place-items: center;
-      }
-
-      .holding-content {
-        max-width: 820px;
-        width: 100%;
-      }
-
-      .logo {
-        height: 92px;
-        margin-bottom: 32px;
-        object-fit: cover;
-        width: 92px;
-      }
-
-      .eyebrow {
-        color: var(--cream);
-        font-family: "Barlow Condensed", Arial, sans-serif;
-        font-size: 24px;
-        font-weight: 800;
-        letter-spacing: 0;
-        margin: 0 0 14px;
-        text-transform: uppercase;
-      }
-
-      h1 {
-        color: var(--stone);
-        font-family: "Archivo Black", Impact, sans-serif;
-        font-size: clamp(56px, 9vw, 112px);
-        line-height: 0.92;
-        margin: 0;
-        text-transform: uppercase;
-      }
-
-      h1::after {
-        background: linear-gradient(90deg, var(--red), var(--cream), var(--blue), var(--green));
-        content: "";
-        display: block;
-        height: 5px;
-        margin: 28px 0;
-        width: 190px;
-      }
-
-      .lead {
-        color: rgba(231, 221, 208, 0.9);
-        font-size: 21px;
-        font-weight: 600;
-        margin: 0;
-        max-width: 680px;
-      }
-
-      .release-box {
-        background: rgba(5, 5, 4, 0.68);
-        border: 1px solid var(--line);
-        box-shadow: var(--shadow);
-        margin-top: 34px;
-        max-width: 690px;
-        padding: 26px;
-      }
-
-      .release-box p {
-        color: rgba(231, 221, 208, 0.86);
-        font-size: 18px;
-        margin: 0;
-      }
-
-      .actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 14px;
-        margin-top: 24px;
-      }
-
-      .button {
-        align-items: center;
-        border: 1px solid transparent;
-        display: inline-flex;
-        font-family: "Barlow Condensed", Arial, sans-serif;
-        font-size: 20px;
-        font-weight: 800;
-        justify-content: center;
-        min-height: 56px;
-        padding: 0 30px;
-        text-transform: uppercase;
-        transition: transform 180ms ease;
-      }
-
-      .button:hover {
-        transform: translateY(-2px);
-      }
-
-      .button.primary {
-        background: linear-gradient(90deg, var(--red), #c9b89d 50%, var(--blue));
-        color: var(--ink);
-      }
-
-      .button.ghost {
-        background: rgba(231, 221, 208, 0.06);
-        border-color: rgba(231, 221, 208, 0.32);
-        color: var(--stone);
-      }
-
-      .support-note {
-        border-left: 4px solid var(--blue);
-        color: var(--stone-2);
-        font-size: 17px;
-        margin-top: 30px;
-        max-width: 640px;
-        padding-left: 18px;
-      }
-
-      @media (max-width: 680px) {
-        .holding-page {
-          padding: 34px 22px;
-        }
-
-        .logo {
-          height: 76px;
-          width: 76px;
-        }
-
-        .lead {
-          font-size: 18px;
-        }
-
-        .button {
-          width: 100%;
-        }
-      }
-    </style>
+    <link rel="icon" href="assets/logo/favicon.ico">
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <main class="holding-page">
-      <section class="holding-content" aria-labelledby="page-title">
-        <img class="logo" src="assets/logo/logo-icon.png" alt="">
-        <p class="eyebrow">Men of Stone</p>
-        <h1 id="page-title">Reveal Coming Soon</h1>
-        <p class="lead">
-          The full Men of Stone site is being held back until reveal day. For now,
-          the song for Phil Stone is available on its own page.
-        </p>
+    <header class="site-header" data-header>
+      <a class="brand" href="#top" aria-label="Men of Stone home">
+        <img class="brand-mark" src="assets/logo/logo-icon.png" alt="">
+        <span>Men of Stone</span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#phil">For Phil</a>
+        <a href="#song">The Song</a>
+        <a href="#nations">Four Nations</a>
+        <a href="#milksham">Milksham Mental Health</a>
+        <a href="#contact">Join</a>
+      </nav>
+      <a class="header-action" href="#song">Play the tribute</a>
+      <button class="menu-button" type="button" data-menu-button aria-expanded="false" aria-controls="mobile-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span class="sr-only">Open menu</span>
+      </button>
+    </header>
 
-        <div class="release-box">
-          <p>
-            Listen to the tribute, download the track for free, and please donate
-            to Phil's fundraiser if you can.
+    <div class="mobile-menu" id="mobile-menu" data-mobile-menu>
+      <a href="#phil">For Phil</a>
+      <a href="#song">The Song</a>
+      <a href="#nations">Four Nations</a>
+      <a href="#milksham">Milksham Mental Health</a>
+      <a href="#contact">Join</a>
+    </div>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <img class="hero-watermark" src="assets/logo/logo-full-transparent.png" alt="">
+        <div class="hero-content">
+          <img class="hero-logo" src="assets/logo/logo-full-transparent.png" alt="Men of Stone. Strength. Unity. Brotherhood. One nation. One purpose.">
+          <p class="partner-line">A Milksham Mental Health project</p>
+          <h1 id="hero-title">No man should carry it alone.</h1>
+          <p class="hero-copy">
+            Men of Stone is being built in memory of Phil Stone: a place for men
+            to talk honestly, show up for each other, and stay connected before
+            the weight gets too heavy.
           </p>
-          <div class="actions">
-            <a class="button primary" href="/forever-unforgettable/">Open Forever Unforgettable</a>
-            <a class="button ghost" href="/api/donate" target="_blank" rel="noopener">Donate to Phil's fundraiser</a>
+          <div class="hero-actions">
+            <a class="button primary" href="#song">Play Forever Unforgettable</a>
+            <a class="button ghost" href="#contact">Register interest</a>
           </div>
         </div>
+      </section>
 
-        <p class="support-note">
-          More details on Men of Stone will be shared when the site is ready.
-        </p>
+      <section class="phil-section" id="phil" aria-labelledby="phil-title">
+        <div class="phil-photo">
+          <img src="assets/photos/phil-hills.jpeg" alt="Phil Stone standing in the hills">
+        </div>
+        <div class="phil-copy">
+          <p class="section-kicker">For Phil Stone</p>
+          <h2 id="phil-title">One of the kindest men I have ever known.</h2>
+          <p>
+            This is a tribute to Phil and a promise to the men still here. It is
+            not about pretending pain is simple. It is about making space for men
+            to speak, listen, and be held up by people who mean it.
+          </p>
+          <blockquote>
+            "Phil Stone lives on in the words of this song."
+          </blockquote>
+        </div>
+      </section>
+
+      <section class="music-section" id="song" aria-labelledby="song-title">
+        <div class="music-copy">
+          <p class="section-kicker">WoBBoB - Forever Unforgettable</p>
+          <h2 id="song-title">A song and tribute for Phil.</h2>
+          <p>
+            Watch the new tribute video and download the track for free. If you
+            like it and want to keep it, please donate to Phil's fundraiser if
+            you can, whether it is a penny or a pound.
+          </p>
+          <div class="music-actions">
+            <a class="button primary" href="/api/download-track">Download the track</a>
+            <a class="button ghost" href="/api/donate" target="_blank" rel="noopener">Donate to Phil's fundraiser</a>
+          </div>
+          <p class="social-line">
+            Please like and share the song post as well:
+            <strong>#ForeverPhil #ForeverUnforgettable #PhilStone</strong>
+          </p>
+        </div>
+        <div class="music-video">
+          <p class="video-label">Forever Unforgettable tribute video</p>
+          <video controls preload="metadata" poster="assets/photos/phil-hills.jpeg">
+            <source src="https://github.com/OGs-tradeathem/Men-of-Stone/releases/download/forever-unforgettable-video/forever-unforgettable-wobbob-web.mp4" type="video/mp4">
+          </video>
+        </div>
+      </section>
+
+      <section class="nations-section" id="nations" aria-labelledby="nations-title">
+        <div class="section-heading">
+          <p class="section-kicker">Strength. Unity. Brotherhood.</p>
+          <h2 id="nations-title">Four nations in one mark.</h2>
+          <p>
+            The Men of Stone logo carries Wales, Scotland, Ireland, and England
+            together. Each part matters. The point is not where a man is from;
+            the point is that he is not left on his own.
+          </p>
+        </div>
+        <div class="nation-grid">
+          <article class="nation-card wales">
+            <h3>Wales</h3>
+            <p>Fire, pride, and the courage to speak before silence wins.</p>
+          </article>
+          <article class="nation-card scotland">
+            <h3>Scotland</h3>
+            <p>Steadiness, loyalty, and turning up when it matters.</p>
+          </article>
+          <article class="nation-card ireland">
+            <h3>Ireland</h3>
+            <p>Heart, humour, and keeping a brother close through hard days.</p>
+          </article>
+          <article class="nation-card england">
+            <h3>England</h3>
+            <p>Respect, remembrance, and building something that lasts.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="milksham-section" id="milksham" aria-labelledby="milksham-title">
+        <img class="section-watermark" src="assets/logo/logo-full-transparent.png" alt="">
+        <div>
+          <p class="section-kicker">Run through Milksham Mental Health</p>
+          <h2 id="milksham-title">Connected support, built properly.</h2>
+        </div>
+        <div class="milksham-copy">
+          <p>
+            Men of Stone will sit alongside Milksham Mental Health so the message,
+            the meetups, and the support all connect in one place. The aim is
+            simple: make it easier for men to reach out and easier for people to
+            know where to send them.
+          </p>
+          <p>
+            More details on sessions, locations, and how to get involved will be
+            added as the project is finalised.
+          </p>
+        </div>
+      </section>
+
+      <section class="meet-section" aria-labelledby="meet-title">
+        <div class="section-heading">
+          <p class="section-kicker">How it will work</p>
+          <h2 id="meet-title">Show up. Speak if you can. Listen if you cannot.</h2>
+        </div>
+        <div class="meet-options">
+          <article>
+            <h3>Online</h3>
+            <p>For men who need to join from home, work, or somewhere private.</p>
+          </article>
+          <article>
+            <h3>In person</h3>
+            <p>Face to face sessions for men nearby when the group is ready.</p>
+          </article>
+          <article>
+            <h3>No judgement</h3>
+            <p>A steady space where honesty matters more than having the words perfect.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="contact-section" id="contact" aria-labelledby="contact-title">
+        <div class="contact-copy">
+          <p class="section-kicker">Join the next step</p>
+          <h2 id="contact-title">Register interest in Men of Stone.</h2>
+          <p>
+            Leave your details and the group can send updates when the first
+            Men of Stone sessions are ready.
+          </p>
+          <p class="closing-line">For Phil. For the lads still here.</p>
+        </div>
+        <form class="contact-form" data-contact-form>
+          <label>
+            <span>Name</span>
+            <input name="name" autocomplete="name" required>
+          </label>
+          <label>
+            <span>Email or phone</span>
+            <input name="contact" autocomplete="email" required>
+          </label>
+          <label>
+            <span>Preferred way to join</span>
+            <select name="meetType">
+              <option>Online</option>
+              <option>In person</option>
+              <option>Either</option>
+            </select>
+          </label>
+          <label>
+            <span>Message</span>
+            <textarea name="message" rows="4" placeholder="Anything you want the group to know"></textarea>
+          </label>
+          <button class="button primary" type="submit">Send interest</button>
+          <p class="form-note" data-form-note aria-live="polite"></p>
+        </form>
       </section>
     </main>
+
+    <section class="crisis-note" aria-label="Urgent support">
+      <p>
+        Men of Stone is peer support, not an emergency service. If someone is in
+        immediate danger, call 999. If you need to talk now, Samaritans are free
+        to call on <a href="tel:116123">116 123</a>.
+      </p>
+    </section>
+
+    <footer class="site-footer">
+      <img src="assets/logo/logo-icon.png" alt="">
+      <span>Men of Stone</span>
+      <span>A Milksham Mental Health project</span>
+      <span>No man should carry it alone.</span>
+    </footer>
+
+    <script src="script.js"></script>
   </body>
 </html>
