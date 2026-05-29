@@ -473,6 +473,10 @@ textarea {
   width: 100%;
 }
 
+input[name="_honey"] {
+  display: none;
+}
+
 select {
   color-scheme: dark;
 }

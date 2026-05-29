@@ -20,13 +20,47 @@ if (menuButton && mobileMenu) {
 }
 
 if (contactForm && formNote) {
-  contactForm.addEventListener("submit", (event) => {
+  contactForm.addEventListener("submit", async (event) => {
     event.preventDefault();
     const formData = new FormData(contactForm);
     const name = String(formData.get("name") || "").trim();
-    formNote.textContent = name
-      ? `Thanks, ${name}. Your interest is noted on this device for now.`
-      : "Thanks. Your interest is noted on this device for now.";
-    contactForm.reset();
+    const submitButton = contactForm.querySelector('button[type="submit"]');
+
+    formData.set("_replyto", String(formData.get("contact") || "").trim());
+    formData.set("submittedAt", new Date().toLocaleString("en-GB", {
+      dateStyle: "full",
+      timeStyle: "short",
+    }));
+
+    if (submitButton) {
+      submitButton.disabled = true;
+    }
+    formNote.textContent = "Sending your interest...";
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+        },
+        body: formData,
+      });
+
+      if (!response.ok) {
+        throw new Error("Form submission failed");
+      }
+
+      formNote.textContent = name
+        ? `Thanks, ${name}. Your interest has been sent to Men of Stone.`
+        : "Thanks. Your interest has been sent to Men of Stone.";
+      contactForm.reset();
+    } catch (error) {
+      formNote.textContent =
+        "Sorry, the form could not send just now. Please email men.of.stoneuk@gmail.com.";
+    } finally {
+      if (submitButton) {
+        submitButton.disabled = false;
+      }
+    }
   });
 }
