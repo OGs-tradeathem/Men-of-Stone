@@ -49,9 +49,15 @@ if (contactForm && formNote) {
         throw new Error("Form submission failed");
       }
 
-      formNote.textContent = name
+      const result = await response.json();
+      const savedMessage = name
         ? `Thanks, ${name}. Your interest has been recorded.`
         : "Thanks. Your interest has been recorded.";
+      const sentMessage = name
+        ? `Thanks, ${name}. Your interest has been sent to Men of Stone.`
+        : "Thanks. Your interest has been sent to Men of Stone.";
+
+      formNote.textContent = result.emailed ? sentMessage : savedMessage;
       contactForm.reset();
     } catch (error) {
       const subject = encodeURIComponent("Men of Stone interest");
