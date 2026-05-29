@@ -26,7 +26,6 @@ if (contactForm && formNote) {
     const name = String(formData.get("name") || "").trim();
     const submitButton = contactForm.querySelector('button[type="submit"]');
 
-    formData.set("_replyto", String(formData.get("contact") || "").trim());
     formData.set("submittedAt", new Date().toLocaleString("en-GB", {
       dateStyle: "full",
       timeStyle: "short",
@@ -51,12 +50,17 @@ if (contactForm && formNote) {
       }
 
       formNote.textContent = name
-        ? `Thanks, ${name}. Your interest has been sent to Men of Stone.`
-        : "Thanks. Your interest has been sent to Men of Stone.";
+        ? `Thanks, ${name}. Your interest has been recorded.`
+        : "Thanks. Your interest has been recorded.";
       contactForm.reset();
     } catch (error) {
+      const subject = encodeURIComponent("Men of Stone interest");
+      const body = encodeURIComponent(
+        `Name: ${name}\nContact: ${formData.get("contact") || ""}\nPreferred way to join: ${formData.get("meetType") || ""}\n\nMessage:\n${formData.get("message") || ""}`
+      );
       formNote.textContent =
-        "Sorry, the form could not send just now. Please email men.of.stoneuk@gmail.com.";
+        "Sorry, the form could not send just now. Opening your email app instead.";
+      window.location.href = `mailto:men.of.stoneuk@gmail.com?subject=${subject}&body=${body}`;
     } finally {
       if (submitButton) {
         submitButton.disabled = false;
