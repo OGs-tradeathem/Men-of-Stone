@@ -105,9 +105,176 @@
         object-fit: cover;
       }
 
+      .wall-section {
+        background:
+          linear-gradient(180deg, rgba(5, 5, 4, 0.92), rgba(5, 5, 4, 0.74)),
+          url("../assets/photos/New murial ideas/main.png") center / cover no-repeat;
+        border-top: 1px solid var(--line);
+        padding: 88px 5vw;
+      }
+
+      .wall-heading {
+        align-items: end;
+        display: grid;
+        gap: 28px;
+        grid-template-columns: minmax(280px, 0.8fr) minmax(320px, 1fr);
+        margin-bottom: 34px;
+      }
+
+      .wall-heading p {
+        color: rgba(232, 222, 208, 0.86);
+        font-size: 20px;
+        margin: 0;
+      }
+
+      .wall-layout {
+        display: grid;
+        gap: 24px;
+        grid-template-columns: minmax(280px, 420px) minmax(0, 1fr);
+      }
+
+      .wall-form,
+      .wall-board {
+        background: rgba(5, 5, 4, 0.78);
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow);
+      }
+
+      .wall-form {
+        align-self: start;
+        display: grid;
+        gap: 16px;
+        padding: 22px;
+      }
+
+      .wall-form input[name="_honey"] {
+        display: none;
+      }
+
+      .wall-form label {
+        display: grid;
+        gap: 8px;
+      }
+
+      .wall-form span,
+      .font-choice-title {
+        color: var(--cream);
+        font-family: "Barlow Condensed", Arial, sans-serif;
+        font-size: 19px;
+        font-weight: 800;
+        text-transform: uppercase;
+      }
+
+      .wall-form input,
+      .wall-form textarea {
+        background: rgba(232, 222, 208, 0.08);
+        border: 1px solid rgba(232, 222, 208, 0.24);
+        color: var(--stone);
+        font: 600 16px/1.45 Inter, Arial, sans-serif;
+        padding: 14px;
+        width: 100%;
+      }
+
+      .wall-form textarea {
+        min-height: 150px;
+        resize: vertical;
+      }
+
+      .font-options {
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .font-options label {
+        background: rgba(232, 222, 208, 0.06);
+        border: 1px solid rgba(232, 222, 208, 0.18);
+        cursor: pointer;
+        padding: 12px;
+      }
+
+      .font-options input {
+        margin: 0 8px 0 0;
+        width: auto;
+      }
+
+      .font-options .sample {
+        color: rgba(232, 222, 208, 0.88);
+        font-size: 19px;
+      }
+
+      .font-strong {
+        font-family: "Barlow Condensed", Arial, sans-serif;
+        font-weight: 800;
+        text-transform: uppercase;
+      }
+
+      .font-classic {
+        font-family: Georgia, "Times New Roman", serif;
+      }
+
+      .font-handwritten {
+        font-family: "Segoe Print", "Bradley Hand ITC", cursive;
+      }
+
+      .font-quiet {
+        font-family: Inter, Arial, sans-serif;
+      }
+
+      .wall-board {
+        min-height: 420px;
+        padding: 18px;
+      }
+
+      .wall-messages {
+        display: grid;
+        gap: 16px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .wall-message {
+        background:
+          linear-gradient(135deg, rgba(232, 222, 208, 0.16), rgba(232, 222, 208, 0.06));
+        border: 1px solid rgba(232, 222, 208, 0.2);
+        min-height: 170px;
+        padding: 20px;
+      }
+
+      .wall-message blockquote {
+        color: var(--stone);
+        font-size: 22px;
+        line-height: 1.25;
+        margin: 0;
+        white-space: pre-wrap;
+      }
+
+      .wall-message figcaption {
+        color: var(--cream);
+        font-family: "Barlow Condensed", Arial, sans-serif;
+        font-size: 20px;
+        font-weight: 800;
+        margin-top: 18px;
+        text-transform: uppercase;
+      }
+
+      .wall-status {
+        color: var(--stone-2);
+        font-size: 15px;
+        margin: 0;
+      }
+
+      .wall-empty {
+        color: rgba(232, 222, 208, 0.72);
+        font-size: 19px;
+        margin: 0;
+      }
+
       @media (max-width: 920px) {
         .tribute-layout,
-        .memory-grid {
+        .memory-grid,
+        .wall-heading,
+        .wall-layout,
+        .wall-messages {
           grid-template-columns: 1fr;
         }
 
@@ -117,7 +284,8 @@
         }
 
         .tribute-layout,
-        .mural-section {
+        .mural-section,
+        .wall-section {
           padding: 52px 22px;
         }
       }
@@ -192,6 +360,62 @@
         </div>
       </section>
 
+      <section class="wall-section" aria-labelledby="wall-title">
+        <div class="wall-heading">
+          <div>
+            <p class="section-kicker">Phil's wall</p>
+            <h2 id="wall-title">Your turn to make Phil's wall, Phil's wall.</h2>
+          </div>
+          <p>
+            Add your name and a message for Phil. Choose the style you want it
+            written in, and it will sit here with the other words left for him.
+          </p>
+        </div>
+
+        <div class="wall-layout">
+          <form class="wall-form" data-wall-form>
+            <input type="text" name="_honey" autocomplete="off" tabindex="-1" aria-hidden="true">
+            <label>
+              <span>Your name</span>
+              <input name="name" autocomplete="name" maxlength="60" required>
+            </label>
+            <label>
+              <span>Your message to Phil</span>
+              <textarea name="comment" maxlength="800" required placeholder="Write your message for Phil"></textarea>
+            </label>
+            <div>
+              <p class="font-choice-title">Pick a style</p>
+              <div class="font-options">
+                <label>
+                  <input type="radio" name="font" value="strong" checked>
+                  <span class="sample font-strong">Strong</span>
+                </label>
+                <label>
+                  <input type="radio" name="font" value="classic">
+                  <span class="sample font-classic">Classic</span>
+                </label>
+                <label>
+                  <input type="radio" name="font" value="handwritten">
+                  <span class="sample font-handwritten">Handwritten</span>
+                </label>
+                <label>
+                  <input type="radio" name="font" value="quiet">
+                  <span class="sample font-quiet">Quiet</span>
+                </label>
+              </div>
+            </div>
+            <button class="button primary" type="submit">Add to Phil's wall</button>
+            <p class="wall-status" data-wall-status aria-live="polite"></p>
+          </form>
+
+          <div class="wall-board" aria-live="polite">
+            <div class="wall-messages" data-wall-messages>
+              <p class="wall-empty">Loading Phil's wall...</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="memory-grid" aria-label="Phil Stone photo memories">
         <img src="../assets/photos/phil-hills.jpeg" alt="Phil Stone in the hills">
         <img src="../assets/photos/phil-portrait.jpeg" alt="Phil Stone in a rugby top">
@@ -207,5 +431,87 @@
         to call on <a href="tel:116123">116 123</a>.
       </p>
     </section>
+    <script>
+      const wallForm = document.querySelector("[data-wall-form]");
+      const wallStatus = document.querySelector("[data-wall-status]");
+      const wallMessages = document.querySelector("[data-wall-messages]");
+      const fontClasses = {
+        strong: "font-strong",
+        classic: "font-classic",
+        handwritten: "font-handwritten",
+        quiet: "font-quiet",
+      };
+
+      loadWallMessages();
+
+      wallForm?.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        wallStatus.textContent = "Adding your message to Phil's wall...";
+
+        try {
+          const formData = new FormData(wallForm);
+          const response = await fetch("/api/memorial-wall", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(formData),
+          });
+          const result = await response.json();
+
+          if (!response.ok || !result.ok) {
+            throw new Error(result.error || "The wall could not be updated just now.");
+          }
+
+          wallForm.reset();
+          wallForm.querySelector('input[name="font"][value="strong"]').checked = true;
+          wallStatus.textContent = "Your message has been added to Phil's wall.";
+          await loadWallMessages();
+        } catch (error) {
+          wallStatus.textContent = error.message;
+        }
+      });
+
+      async function loadWallMessages() {
+        if (!wallMessages) return;
+
+        try {
+          const response = await fetch(`/api/memorial-wall?ts=${Date.now()}`);
+          const result = await response.json();
+          renderWallMessages(result.messages || []);
+        } catch {
+          wallMessages.innerHTML = "";
+          const empty = document.createElement("p");
+          empty.className = "wall-empty";
+          empty.textContent = "Phil's wall could not load just now.";
+          wallMessages.append(empty);
+        }
+      }
+
+      function renderWallMessages(messages) {
+        wallMessages.innerHTML = "";
+
+        if (!messages.length) {
+          const empty = document.createElement("p");
+          empty.className = "wall-empty";
+          empty.textContent = "Be the first to write on Phil's wall.";
+          wallMessages.append(empty);
+          return;
+        }
+
+        messages.forEach((message) => {
+          const figure = document.createElement("figure");
+          figure.className = "wall-message";
+
+          const quote = document.createElement("blockquote");
+          quote.className = fontClasses[message.font] || fontClasses.strong;
+          quote.textContent = message.comment;
+
+          const caption = document.createElement("figcaption");
+          caption.textContent = message.name;
+
+          figure.append(quote, caption);
+          wallMessages.append(figure);
+        });
+      }
+    </script>
   </body>
 </html>
