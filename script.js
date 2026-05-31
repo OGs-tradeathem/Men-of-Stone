@@ -37,12 +37,14 @@ if (contactForm && formNote) {
     formNote.textContent = "Sending your interest...";
 
     try {
+      const payload = new URLSearchParams(formData);
       const response = await fetch(contactForm.action, {
         method: "POST",
         headers: {
           Accept: "application/json",
+          "Content-Type": "application/x-www-form-urlencoded",
         },
-        body: formData,
+        body: payload,
       });
 
       if (!response.ok) {
@@ -62,7 +64,7 @@ if (contactForm && formNote) {
     } catch (error) {
       const subject = encodeURIComponent("Men of Stone interest");
       const body = encodeURIComponent(
-        `Name: ${name}\nContact: ${formData.get("contact") || ""}\nPreferred way to join: ${formData.get("meetType") || ""}\n\nMessage:\n${formData.get("message") || ""}`
+        `Name: ${name}\nEmail: ${formData.get("email") || ""}\nMobile: ${formData.get("mobile") || ""}\nPreferred way to join: ${formData.get("meetType") || ""}\n\nMessage:\n${formData.get("message") || ""}`
       );
       formNote.textContent =
         "Sorry, the form could not send just now. Opening your email app instead.";

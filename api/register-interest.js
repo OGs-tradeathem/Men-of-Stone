@@ -18,13 +18,15 @@ module.exports = async function handler(request, response) {
   }
 
   const bodyText = Buffer.concat(chunks).toString("utf8");
-  const params = new URLSearchParams(bodyText);
+  const params = parseSubmissionBody(bodyText, request.headers["content-type"] || "");
   const forwardedFor = request.headers["x-forwarded-for"] || "";
   const firstIp = String(forwardedFor).split(",")[0].trim();
   const submission = {
     event: "interest_submission",
     timestamp: new Date().toISOString(),
     name: String(params.get("name") || "").trim(),
+    email: String(params.get("email") || "").trim(),
+    mobile: String(params.get("mobile") || "").trim(),
     contact: String(params.get("contact") || "").trim(),
     meetType: String(params.get("meetType") || "").trim(),
     message: String(params.get("message") || "").trim(),
@@ -56,13 +58,14 @@ module.exports = async function handler(request, response) {
   await transporter.sendMail({
     from: `"Men of Stone" <${smtpUser}>`,
     to: mailTo,
-    replyTo: submission.contact || smtpUser,
+    replyTo: submission.email || smtpUser,
     subject: `New Men of Stone interest${submission.name ? ` - ${submission.name}` : ""}`,
     text: [
       "New Men of Stone interest",
       "",
       `Name: ${submission.name}`,
-      `Email or phone: ${submission.contact}`,
+      `Email address: ${submission.email || submission.contact}`,
+      `Mobile number: ${submission.mobile}`,
       `Preferred way to join: ${submission.meetType}`,
       `Submitted: ${submission.timestamp}`,
       "",
@@ -73,7 +76,8 @@ module.exports = async function handler(request, response) {
       <h2>New Men of Stone interest</h2>
       <table cellpadding="8" cellspacing="0" border="0">
         <tr><td><strong>Name</strong></td><td>${escapeHtml(submission.name)}</td></tr>
-        <tr><td><strong>Email or phone</strong></td><td>${escapeHtml(submission.contact)}</td></tr>
+        <tr><td><strong>Email address</strong></td><td>${escapeHtml(submission.email || submission.contact)}</td></tr>
+        <tr><td><strong>Mobile number</strong></td><td>${escapeHtml(submission.mobile)}</td></tr>
         <tr><td><strong>Preferred way to join</strong></td><td>${escapeHtml(submission.meetType)}</td></tr>
         <tr><td><strong>Submitted</strong></td><td>${escapeHtml(submission.timestamp)}</td></tr>
       </table>
@@ -94,4 +98,20 @@ function escapeHtml(value) {
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#039;");
+}
+
+function parseSubmissionBody(bodyText, contentType) {
+  if (!contentType.includes("multipart/form-data")) {
+    return new URLSearchParams(bodyText);
+  }
+
+  const params = new URLSearchParams();
+  const namePattern = /name="([^"]+)"\r?\n\r?\n([\s\S]*?)(?=\r?\n--)/g;
+  let match;
+
+  while ((match = namePattern.exec(bodyText)) !== null) {
+    params.set(match[1], match[2].trim());
+  }
+
+  return params;
 }
