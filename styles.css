@@ -87,8 +87,7 @@ img {
   left: 0;
   min-height: 80px;
   padding: 0 5vw;
-  position: fixed;
-  right: 0;
+  position: sticky;
   top: 0;
   z-index: 20;
 }
@@ -220,9 +219,11 @@ h3 {
 
 .hero {
   display: grid;
+  gap: 5vw;
+  grid-template-columns: minmax(0, 0.92fr) minmax(320px, 0.7fr);
   min-height: 100vh;
   overflow: hidden;
-  padding: 116px 5vw 64px;
+  padding: 64px 5vw;
   position: relative;
 }
 
@@ -243,9 +244,33 @@ h3 {
   z-index: 1;
 }
 
-.hero-logo {
-  margin-bottom: 24px;
-  max-width: min(360px, 70vw);
+.hero-media {
+  align-self: center;
+  display: grid;
+  gap: 18px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-photo-main,
+.hero-album {
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  width: 100%;
+}
+
+.hero-photo-main {
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: 72% center;
+}
+
+.hero-album {
+  aspect-ratio: 1;
+  max-width: 250px;
+  object-fit: cover;
+  justify-self: end;
+  margin-top: -140px;
 }
 
 .partner-line,
@@ -279,6 +304,10 @@ h3 {
   flex-wrap: wrap;
   gap: 16px;
   margin-top: 30px;
+}
+
+.phil-link {
+  margin-top: 28px;
 }
 
 .phil-section,
@@ -560,6 +589,15 @@ textarea:focus {
     grid-template-columns: 1fr;
   }
 
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .hero-media {
+    max-width: 520px;
+  }
+
   .nation-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -581,12 +619,7 @@ textarea:focus {
   }
 
   .hero {
-    min-height: auto;
-    padding: 96px 22px 52px;
-  }
-
-  .hero-logo {
-    max-width: min(100%, 320px);
+    padding: 48px 22px;
   }
 
   h1 {
@@ -606,6 +639,11 @@ textarea:focus {
   .music-actions,
   .button {
     width: 100%;
+  }
+
+  .hero-album {
+    max-width: 180px;
+    margin-top: -90px;
   }
 
   .phil-section,

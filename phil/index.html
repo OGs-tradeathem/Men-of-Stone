@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Phil Stone | Men of Stone</title>
+    <meta
+      name="description"
+      content="A dedicated tribute page for Phil Stone, remembered by Men of Stone and Melksham Mental Health."
+    >
+    <meta property="og:title" content="Phil Stone | Men of Stone">
+    <meta property="og:description" content="A dedicated tribute page for Phil Stone. Forever unforgettable.">
+    <meta property="og:image" content="https://www.men-of-stone.online/assets/photos/New%20murial%20ideas/main.png">
+    <link rel="icon" href="../assets/logo/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+      .phil-page-hero {
+        background:
+          linear-gradient(90deg, rgba(5, 5, 4, 0.96) 0%, rgba(5, 5, 4, 0.74) 42%, rgba(5, 5, 4, 0.28) 100%),
+          url("../assets/photos/New murial ideas/main.png") center / cover no-repeat;
+        min-height: calc(100vh - 80px);
+        padding: 80px 5vw;
+      }
+
+      .phil-page-copy {
+        max-width: 850px;
+      }
+
+      .phil-page-copy h1 {
+        max-width: 820px;
+      }
+
+      .phil-page-copy p {
+        color: rgba(232, 222, 208, 0.88);
+        font-size: 21px;
+        font-weight: 600;
+        margin: 24px 0 0;
+        max-width: 720px;
+      }
+
+      .tribute-layout {
+        display: grid;
+        gap: 5vw;
+        grid-template-columns: minmax(280px, 0.74fr) minmax(320px, 1fr);
+        padding: 88px 5vw;
+      }
+
+      .album-card,
+      .mural-card {
+        background: rgba(5, 5, 4, 0.72);
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow);
+        padding: 14px;
+      }
+
+      .album-card img,
+      .mural-card img,
+      .memory-grid img {
+        width: 100%;
+      }
+
+      .album-card img {
+        aspect-ratio: 1;
+        object-fit: cover;
+      }
+
+      .tribute-copy p,
+      .tribute-copy li {
+        color: rgba(232, 222, 208, 0.86);
+        font-size: 19px;
+      }
+
+      .tribute-copy ul {
+        display: grid;
+        gap: 14px;
+        margin: 26px 0 0;
+        padding-left: 20px;
+      }
+
+      .mural-section {
+        padding: 0 5vw 88px;
+      }
+
+      .mural-card img {
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+      }
+
+      .memory-grid {
+        background: var(--stone);
+        display: grid;
+        gap: 14px;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        padding: 14px;
+      }
+
+      .memory-grid img {
+        aspect-ratio: 1;
+        object-fit: cover;
+      }
+
+      @media (max-width: 920px) {
+        .tribute-layout,
+        .memory-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .phil-page-hero {
+          min-height: auto;
+          padding: 58px 22px;
+        }
+
+        .tribute-layout,
+        .mural-section {
+          padding: 52px 22px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header" data-header>
+      <a class="brand" href="../" aria-label="Men of Stone home">
+        <img class="brand-mark" src="../assets/logo/logo-icon.png" alt="">
+        <span>Men of Stone</span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="../">Home</a>
+        <a href="../#song">The Song</a>
+        <a href="../#melksham">Melksham Mental Health</a>
+        <a href="../#contact">Join</a>
+      </nav>
+      <a class="header-action" href="../forever-unforgettable/">Play the tribute</a>
+    </header>
+
+    <main>
+      <section class="phil-page-hero" aria-labelledby="phil-page-title">
+        <div class="phil-page-copy">
+          <p class="partner-line">Phil Stone</p>
+          <h1 id="phil-page-title">The man. The mate. The legend.</h1>
+          <p>
+            A first mock-up for Phil's dedicated page: built around the mural
+            idea, the Forever Unforgettable artwork, Melksham Rugby Club, and the
+            memories still to come from the people who knew him best.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="../forever-unforgettable/">Play Forever Unforgettable</a>
+            <a class="button ghost" href="../#contact">Register interest</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="tribute-layout">
+        <div class="album-card">
+          <img src="../assets/photos/New murial ideas/Forever Unforgettable.png" alt="Forever Unforgettable album artwork for Phil Stone">
+        </div>
+        <div class="tribute-copy">
+          <p class="section-kicker">Forever unforgettable</p>
+          <h2>A page for the stories.</h2>
+          <p>
+            This page should become the place where Phil's friends and family can
+            add the words that only they can say: the stories, the laughs, the
+            club memories, the mountain walks, the gym graft, and the moments
+            that explain why he mattered so much.
+          </p>
+          <ul>
+            <li>A tribute wall for messages from friends, teammates, and family.</li>
+            <li>A photo section that keeps full images visible and respectful.</li>
+            <li>A mural section to test the strongest artwork before it is used publicly.</li>
+            <li>A clear link back to the song and Phil's fundraiser.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="mural-section" aria-labelledby="mural-title">
+        <div class="section-heading">
+          <p class="section-kicker">Mural concept</p>
+          <h2 id="mural-title">Main wall direction.</h2>
+          <p>
+            This mock-up uses the mural file called Main as the lead visual. It
+            feels public, strong, and community-facing, so it works well as the
+            first version of Phil's page while the final mural choice is decided.
+          </p>
+        </div>
+        <div class="mural-card">
+          <img src="../assets/photos/New murial ideas/main.png" alt="Phil Stone mural concept artwork">
+        </div>
+      </section>
+
+      <section class="memory-grid" aria-label="Phil Stone photo memories">
+        <img src="../assets/photos/phil-hills.jpeg" alt="Phil Stone in the hills">
+        <img src="../assets/photos/phil-portrait.jpeg" alt="Phil Stone in a rugby top">
+        <img src="../assets/photos/phil-gym.jpeg" alt="Phil Stone in the gym">
+        <img src="../assets/photos/phil-memory.jpeg" alt="A memory of Phil Stone">
+      </section>
+    </main>
+
+    <section class="crisis-note" aria-label="Urgent support">
+      <p>
+        Men of Stone is peer support, not an emergency service. If someone is in
+        immediate danger, call 999. If you need to talk now, Samaritans are free
+        to call on <a href="tel:116123">116 123</a>.
+      </p>
+    </section>
+  </body>
+</html>
